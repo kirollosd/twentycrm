@@ -1,6 +1,5 @@
 version: "3.9"
 services:
-
   twenty:
     image: twentycrm/twenty-front:${TAG}
     ports:
@@ -16,12 +15,12 @@ services:
   backend:
     image: twentycrm/twenty-server:${TAG}
     ports:
-      - 3000:3000
+      - 3040:3040
     environment:
       - SIGN_IN_PREFILLED=${SIGN_IN_PREFILLED}
       - PG_DATABASE_URL=${PG_DATABASE_URL}
       - FRONT_BASE_URL=${FRONT_BASE_URL}
-      - PORT=3000
+      - PORT=3040
       - STORAGE_TYPE=local
       - STORAGE_LOCAL_PATH=.local-storage
       - ACCESS_TOKEN_SECRET=${ACCESS_TOKEN_SECRET}
@@ -38,4 +37,3 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_ADMIN_PASSWORD}
 volumes:
   twenty-db-data:
-

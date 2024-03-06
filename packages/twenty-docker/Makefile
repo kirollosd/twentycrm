@@ -24,31 +24,31 @@ dev-postgres-build:
 	@docker compose -f dev/docker-compose.yml up --build postgres -d
 
 prod-docs-build:
-	@cd ../.. && docker build -f ./packages/twenty-docker/prod/twenty-docs/Dockerfile --tag twenty-docs . && cd -
+	@cd ../.. && docker build --platform linux/amd64 -f ./packages/twenty-docker/prod/twenty-docs/Dockerfile --tag twenty-docs . && cd -
 
 prod-docs-run:
 	@docker run -d -p 3000:3000 --name twenty-docs twenty-docs
 
 prod-front-build:
-	@cd ../.. && docker build -f ./packages/twenty-docker/prod/twenty-front/Dockerfile --tag twenty-front . && cd -
+	@cd ../.. && docker build --platform linux/amd64 -f ./packages/twenty-docker/prod/twenty-front/Dockerfile --tag twenty-front . && cd -
 
 prod-front-run:
 	@docker run -d -p 3001:3000 --name twenty-front twenty-front
 
 prod-server-build:
-	@cd ../.. && docker build -f ./packages/twenty-docker/prod/twenty-server/Dockerfile --tag twenty-server . && cd -
+	@cd ../.. && docker build --platform linux/amd64 -f ./packages/twenty-docker/prod/twenty-server/Dockerfile --tag twenty-server . && cd -
 
 prod-server-run:
 	@docker run -d -p 3000:3000 --name twenty-server twenty-server
 
 prod-postgres-build:
-	@cd ../.. && docker build -f ./packages/twenty-docker/prod/twenty-postgres/Dockerfile --tag twenty-postgres . && cd -
+	@cd ../.. && docker build --platform linux/amd64 -f ./packages/twenty-docker/prod/twenty-postgres/Dockerfile --tag twenty-postgres . && cd -
 
 prod-postgres-run:
 	@docker run -d -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres --name twenty-postgres twenty-postgres
 
 prod-website-build:
-	@cd ../.. && docker build -f ./packages/twenty-docker/prod/twenty-website/Dockerfile --tag twenty-website . && cd -
+	@cd ../.. && docker build --platform linux/amd64 -f ./packages/twenty-docker/prod/twenty-website/Dockerfile --tag twenty-website . && cd -
 
 prod-website-run:
 	@docker run -d -p 3000:3000 --name twenty-website twenty-website
