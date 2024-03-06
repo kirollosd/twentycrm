@@ -42,10 +42,10 @@ services:
         name: twenty_postgres
         type: pserv
         property: port
-  disk:
-    name: twenty-disk
-    mountPath: /.local-storage
-    sizeGB: 5
+  # disk:
+  #   name: twenty-disk
+  #   mountPath: /.local-storage
+  #   sizeGB: 5
 - type: pserv
   name: twenty_postgres
   plan: free
@@ -53,10 +53,10 @@ services:
   image:
     url: twentycrm/twenty-postgres:latest
   autoDeploy: false
-  disk:
-    name: data
-    mountPath: /var/lib/postgresql/data
-    sizeGB: 10
+  # disk:
+  #   name: data
+  #   mountPath: /var/lib/postgresql/data
+  #   sizeGB: 10
   envVars:
   - key: POSTGRES_USER
     value: postgres
