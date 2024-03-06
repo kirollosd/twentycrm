@@ -1,1 +1,1 @@
-web: yarn nx database:init twenty-server && npm start
+web: yarn nx database:init twenty-server && yarn start
