@@ -35,28 +35,28 @@ services:
     - key: PG_DATABASE_HOST
       fromService:
         name: twenty_postgres
-        type: pserv
+        type: web
         property: host
     - key: PG_DATABASE_PORT
       fromService:
         name: twenty_postgres
-        type: pserv
+        type: web
         property: port
-  disk:
-    name: twenty-disk
-    mountPath: /.local-storage
-    sizeGB: 5
-- type: pserv
+  # disk:
+  #   name: twenty-disk
+  #   mountPath: /.local-storage
+  #   sizeGB: 5
+- type: web
   name: twenty_postgres
   plan: free
   runtime: image
   image:
     url: twentycrm/twenty-postgres:latest
   autoDeploy: false
-  disk:
-    name: data
-    mountPath: /var/lib/postgresql/data
-    sizeGB: 10
+  # disk:
+  #   name: data
+  #   mountPath: /var/lib/postgresql/data
+  #   sizeGB: 10
   envVars:
   - key: POSTGRES_USER
     value: postgres
