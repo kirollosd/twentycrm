@@ -1,5 +1,4 @@
-build:
-  docker:
-    web: heroku-build/Dockerfile.front
-    server: heroku-build/Dockerfile.server
-    
+# build:
+#   docker:
+#     web: heroku-build/Dockerfile.front
+#     web: heroku-build/Dockerfile.server
