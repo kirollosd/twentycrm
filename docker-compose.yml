@@ -30,11 +30,11 @@ services:
     depends_on:
       - postgres
 
-  postgres:
-    image: twentycrm/twenty-postgres:${TAG}
-    volumes:
-      - twenty-db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=${POSTGRES_ADMIN_PASSWORD}
-volumes:
-  twenty-db-data:
+#   postgres:
+#     image: twentycrm/twenty-postgres:${TAG}
+#     volumes:
+#       - twenty-db-data:/var/lib/postgresql/data
+#     environment:
+#       - POSTGRES_PASSWORD=${POSTGRES_ADMIN_PASSWORD}
+# volumes:
+#   twenty-db-data:
